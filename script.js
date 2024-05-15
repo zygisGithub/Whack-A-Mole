@@ -10,16 +10,15 @@ for (let i = 0; i < 9; i++) {
     square.className = 'square'
     square.id = `${i}`
     gameContainer.append(square)
-    console.log(square.id)
     setInterval(function (){
         const randomNumber = Math.floor(Math.random() * 9)
-        if (randomNumber === Number(square.id)) {
+        if (parseInt(square.id) === randomNumber) {
             square.style.backgroundColor = 'green'
         }
         setTimeout(function (){
             square.style.backgroundColor = 'white'
-        },400)
-    },500)
+        },500)
+    },1000)
 
     square.onclick = function (){
         if (square.style.backgroundColor === 'green'){
